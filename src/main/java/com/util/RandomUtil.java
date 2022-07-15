@@ -14,6 +14,14 @@ public class RandomUtil {
 		return rnd;
 	}
 	
+	public static int randomPeoples() {
+		int max = 60;
+		int min = 10;
+		int range = (max - min) + 1;
+		int rnd = (int) (Math.random() * range) + min;
+		return rnd;
+	}
+	
 	public static String randomStr() {
 		
 		 // create a string of uppercase and lowercase characters and numbers

@@ -36,7 +36,7 @@ public class SingletonPeople {
 	private static void createPeople() {
 
 		all = new ArrayList<People>();
-		for (int i = 1; i <= 26; i++) {
+		for (int i = 1; i <= RandomUtil.randomPeoples(); i++) {
 			People p = null;
 			try {
 				p = new People(i, RandomUtil.randomStr(), RandomUtil.randomStr(), RandomUtil.randomAge());
