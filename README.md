@@ -123,22 +123,15 @@ public class People {
 }
 ```
 
-La classe che ci servirà da modello per istanziare le nostre persone. Le 
-annotazioni fanno la differenza. In questo caso ce ne sono di due tipi: 
-jax-rs e JPA.
+La classe che ci servirà da modello per istanziare le nostre persone. 
 
-Le prime ci permettono di identificare il bean come una risorsa che sarà 
-poi gestita dal framework Jersey nella classe service. 
 
-Per poterla dichiarare tale:
+Utilizziamo le annotazioni JAXB per poter fare 'marshalling e unmarshalling' della nostra classe.
 
 ```xml
 @XmlRootElement -> sulla classe
 @XmlElement -> su i metodi get della classe
 ```
-
-In questo modo abbiamo mappato la nostra classe come risorsa da inviare 
-tramite i verbi HTTP.
 
 Adesso dobbiamo mappare la classe in modo da poterla relazionare con il 
 database. Utilizziamo le annotazioni JPA:
@@ -366,7 +359,7 @@ from People p ", People.class).getResultList();
 
 Prima di chiarire i metodi chiariamo le annotazioni sopra ad esse. Le 
 annotazioni sono quelle di Jax-rs, le quali ci permettono di gestire le 
-risorse attraverso i verbi HTTP creando un web services di tipo RESTful. 
+risorse attraverso i verbi HTTP. 
 
 ```xml
 @Path("/service") -> la prima annotazione da aggiungere sopra 
